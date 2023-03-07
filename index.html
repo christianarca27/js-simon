@@ -9,6 +9,35 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="container-centered">
+        <h1>JS Simon</h1>
+
+        <div id="game-top">
+            <button id="btn-new-game">New Game</button>
+
+            <ul id="random-numbers">
+                <li class="random-number"></li>
+                <li class="random-number"></li>
+                <li class="random-number"></li>
+                <li class="random-number"></li>
+                <li class="random-number"></li>
+            </ul>
+        </div>
+
+        <div id="game-bottom">
+            <div id="user-answers">
+                <input type="number" name="answer-1" id="answer-1" class="user-answer" placeholder="N">
+                <input type="number" name="answer-2" id="answer-2" class="user-answer" placeholder="N">
+                <input type="number" name="answer-3" id="answer-3" class="user-answer" placeholder="N">
+                <input type="number" name="answer-4" id="answer-4" class="user-answer" placeholder="N">
+                <input type="number" name="answer-5" id="answer-5" class="user-answer" placeholder="N">
+            </div>
+    
+            <button id="btn-send-answers">Send Answers</button>
+
+            <div id="score"></div>
+        </div>
+    </div>
     
     <script src="js/script.js"></script>
 </body>

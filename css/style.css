@@ -3,3 +3,97 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.container-centered {
+    padding: 3rem;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 20px;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    margin-bottom: 2rem;
+
+    font-size: 50px;
+}
+
+button {
+    background-color: wheat;
+    padding: 1rem;
+    border: 3px solid brown;
+    border-radius: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#game-top {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#game-top #random-numbers {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-top #random-numbers .random-number {
+    background-color: lightcoral;
+    width: 100px;
+    height: 100px;
+    border: 1px solid darkred;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgb(238, 220, 220);
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#game-bottom {
+    display: none;
+    flex-flow: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#game-bottom #user-answers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-bottom #user-answers .user-answer {
+    background-color: lightseagreen;
+    width: 100px;
+    height: 100px;
+    border: 1px solid darkred;
+
+    color: rgb(238, 220, 220);
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#game-bottom #score {
+    font-weight: bold;
+    font-size: 30px;
+}
