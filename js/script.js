@@ -13,7 +13,7 @@ newGameButtonEl.addEventListener("click", function() {
     }
     gameBottomEl.style.display = "none";
 
-    randomNumbers = generateNRandomNumbers(5, 1, 100);
+    randomNumbers = generateNRandomNumbers(5, 1, 10);
 
     const randomNumberCells = document.querySelectorAll(".random-number");
     showNumbersForSecondsAndAllowAnswer(randomNumberCells, randomNumbers, 10, gameBottomEl);
@@ -22,18 +22,24 @@ newGameButtonEl.addEventListener("click", function() {
 sendAnswersButtonEl.addEventListener("click", function() {
     let userAnswers = getNumbersFromCells(userAnswerCells);
 
-    let userPoints = 0;
-    while(userAnswers.length > 0) {
-        let answer = userAnswers.pop();
-        if(!userAnswers.includes(answer) && randomNumbers.includes(answer)) {
-            userPoints++;
-        }
-    }
-    scoreEl.innerText = "Punteggio: " + userPoints;
+    let rightNumbers = getEqualNumbers(userAnswers, randomNumbers);
+    scoreEl.innerHTML = "Numeri indovinati: " + rightNumbers.toString() + "<br>Punteggio: " + rightNumbers.length;
 });
 
 
 // --------------------------- FUNCTIONS --------------------------- //
+
+function getEqualNumbers(numbers1, mumbers2) {
+    let equalNumbers = [];
+
+    for(let i = 0; i < numbers1.length; i++) {
+        if(numbers1[i] == mumbers2[i]) {
+            equalNumbers.push(numbers1[i]);
+        }
+    }
+
+    return equalNumbers;
+}
 
 function showNumbersForSecondsAndAllowAnswer(numberCells, numbers, seconds, answersEl) {
     for(let i = 0; i < numberCells.length; i++) {
