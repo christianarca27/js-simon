@@ -22,19 +22,14 @@ newGameButtonEl.addEventListener("click", function() {
 sendAnswersButtonEl.addEventListener("click", function() {
     let userAnswers = getNumbersFromCells(userAnswerCells);
 
-    let areEquals = true;
-    for(let i = 0; i < randomNumbers.length; i++) {
-        if(!userAnswers.includes(randomNumbers[i])) {
-            areEquals = false;
+    let userPoints = 0;
+    while(userAnswers.length > 0) {
+        let answer = userAnswers.pop();
+        if(!userAnswers.includes(answer) && randomNumbers.includes(answer)) {
+            userPoints++;
         }
     }
-
-    if(areEquals) {
-        scoreEl.innerText = "Hai vinto!";
-    }
-    else {
-        scoreEl.innerText = "Hai perso..";
-    }
+    scoreEl.innerText = "Punteggio: " + userPoints;
 });
 
 
